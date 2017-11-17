@@ -20,12 +20,4 @@
     <DotNetCliToolReference Include="Microsoft.DotNet.Watcher.Tools" Version="2.0.0" />
   </ItemGroup>
 
-  <Target Name="PrePublishTarget" BeforeTargets="PrepareForPublish">
-    <Exec Command="npm install" />
-    <Exec Command="npm run build" />
-    <ItemGroup>
-      <Dist Include="../../build/**" />
-    </ItemGroup>
-    <Copy SourceFiles="@(Dist)" DestinationFolder="$(PublishDir)\wwwroot\%(RecursiveDir)" SkipUnchangedFiles="true" />
-  </Target>
 </Project>
