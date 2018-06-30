@@ -8,9 +8,11 @@
 </head>
 <body>
   <button id="Notify" type="button">Notify All</button>
-  <script src="https://unpkg.com/@aspnet/signalr-client@1.0.0-alpha2-final/dist/browser/signalr-client-1.0.0-alpha2-final.min.js"></script>
+  <script src="https://unpkg.com/@aspnet/signalr@1.0.0/dist/browser/signalr.min.js"></script>
   <script>
-    const connection = new signalR.HubConnection('/signalr/default');
+    const connection = new signalR.HubConnectionBuilder()
+      .withUrl('/signalr/default')
+      .build();
 
     connection.on('NotifyAll', data => {
       alert(data.message);

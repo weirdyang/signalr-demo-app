@@ -14,7 +14,7 @@ namespace SignalRDemoApp
                 .Configure(app => app
                     .UseDefaultFiles()
                     .UseStaticFiles()
-                    .UseSignalR(routes => routes.MapHub<DefaultHub>("signalr/default"))
+                    .UseSignalR(routes => routes.MapHub<DefaultHub>("/signalr/default"))
                 )
                 .Build()
                 .Run();

@@ -7,7 +7,7 @@ namespace SignalRDemoApp
     {
         public Task NotifyAll(object message)
         {
-            return Clients.All.InvokeAsync("NotifyAll", message);
+            return Clients.All.SendAsync("NotifyAll", message);
         }
     }
 }
